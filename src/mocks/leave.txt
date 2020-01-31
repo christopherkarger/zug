@@ -1,0 +1,62 @@
+journeysObj = {
+"headTexts":["Zeit","Fahrt","Nach","Steig","Abfahrten","Aktuell","Ankunft"],
+"stationName":"Wien Geiselbergstraße Bahnhof",
+"stationEvaId":"8101555",
+"boardType":"dep",
+"imgPath":"/img/",
+"iconProductsSubPath":"vs_oebb/",
+"rtInfo":true,
+"journey":[
+{"id":"3331401810","ti":"12:05","da":"31.01.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"12:48","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181810","ti":"12:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"12:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331411810","ti":"12:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"14:05","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333141812","ti":"12:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"13:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331431810","ti":"13:05","da":"31.01.2020","pr":"S 2","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"13:48","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181811","ti":"13:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"13:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331461810","ti":"13:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"15:06","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333231810","ti":"13:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"14:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331501810","ti":"14:05","da":"31.01.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"14:48","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181812","ti":"14:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"14:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331541810","ti":"14:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"16:07","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333281810","ti":"14:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"15:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331501811","ti":"15:05","da":"31.01.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"15:48","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181813","ti":"15:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"15:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331571810","ti":"15:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"17:07","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333231811","ti":"15:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"16:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331501812","ti":"16:05","da":"31.01.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"16:48","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181814","ti":"16:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"16:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331591810","ti":"16:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"18:07","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333361810","ti":"16:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"17:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331501813","ti":"17:05","da":"31.01.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"17:48","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181815","ti":"17:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"17:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331611810","ti":"17:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"19:07","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333401810","ti":"17:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"18:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331501814","ti":"18:05","da":"31.01.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"18:48","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181816","ti":"18:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"18:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331621810","ti":"18:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"20:06","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333401811","ti":"18:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"19:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3335841810","ti":"19:05","da":"31.01.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"19:25","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181817","ti":"19:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"19:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331631810","ti":"19:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"21:05","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333401812","ti":"19:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"20:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3335841811","ti":"20:05","da":"31.01.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"20:25","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333181818","ti":"20:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"20:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331641810","ti":"20:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"22:05","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333401813","ti":"20:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"21:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3335841812","ti":"21:05","da":"31.01.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"21:25","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333471810","ti":"21:26","da":"31.01.2020","pr":"S 7","st":"Wolfsthal Bahnhof","lastStop":"Wolfsthal Bahnhof","ati":"22:33","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3331661810","ti":"21:35","da":"31.01.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"23:05","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333481810","ti":"21:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"22:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3336031810","ti":"22:05","da":"31.01.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"22:25","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333471811","ti":"22:26","da":"31.01.2020","pr":"S 7","st":"Wolfsthal Bahnhof","lastStop":"Wolfsthal Bahnhof","ati":"23:33","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3336071810","ti":"22:35","da":"31.01.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"22:55","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333481811","ti":"22:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"23:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3336031811","ti":"23:05","da":"31.01.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"23:25","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333501810","ti":"23:26","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"23:41","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3336071811","ti":"23:35","da":"31.01.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"23:55","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3333481812","ti":"23:56","da":"31.01.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"00:11","tr":"2","trChg":false,"rt":false,"rta":false}
+,{"id":"3334231810","ti":"00:05","da":"01.02.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"00:25","tr":"1","trChg":false,"rt":false,"rta":false}
+,{"id":"3334331810","ti":"00:35","da":"01.02.2020","pr":"S 7","st":"Wien Floridsdorf Bahnhof","lastStop":"Wien Floridsdorf Bahnhof","ati":"00:55","tr":"1","trChg":false,"rt":false,"rta":false}
+],
+"maxJ":49
+}
