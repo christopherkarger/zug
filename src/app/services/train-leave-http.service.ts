@@ -14,8 +14,14 @@ export class TrainLeaveHttpService extends TrainLeaveService {
         environment.api.domain + environment.api.leave,
         requestOptions
       )
-      .subscribe(res => {
-        console.log(res);
+      .subscribe((res: string) => {
+        let convertedResult: object;
+        try {
+          convertedResult = JSON.parse(res.replace("journeysObj = ", ""));
+        } catch {
+          throw new Error("Cant convert oebb object");
+        }
+        console.log(convertedResult);
       });
   }
 }
