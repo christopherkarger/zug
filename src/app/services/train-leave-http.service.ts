@@ -5,16 +5,20 @@ import { requestOptions } from "./request-options";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { IMonitor } from "../model/monitor.model";
+import { StringUtilities } from "../string-utilities";
 
 export class TrainLeaveHttpService extends TrainLeaveService {
   constructor(private httpService: HttpService) {
     super();
   }
 
-  getLeave(id: number): Observable<IMonitor> {
+  getLeave(id: string): Observable<IMonitor> {
     return this.httpService
       .get<string>(
-        environment.api.domain + environment.api.leave,
+        StringUtilities.replace(
+          environment.api.domain + environment.api.leave,
+          [id]
+        ),
         requestOptions
       )
       .pipe(

@@ -1,0 +1,7 @@
+<div *ngIf="trainSiemens$ | async as siemens">
+  {{ siemens.stationName }}
+</div>
+
+<div *ngIf="trainGeisel$ | async as geisel">
+  {{ geisel.stationName }}
+</div>
