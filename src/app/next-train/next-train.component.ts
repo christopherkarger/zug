@@ -8,7 +8,9 @@ import { TrainLeaveService } from "../services/train-leave.service";
 })
 export class NextTrainComponent implements OnInit {
   constructor(private tls: TrainLeaveService) {
-    this.tls.getLeave(11);
+    this.tls.getLeave(11).subscribe(res => {
+      console.log(res);
+    });
   }
 
   ngOnInit() {}
