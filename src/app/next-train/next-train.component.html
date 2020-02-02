@@ -1,13 +1,13 @@
 <div *ngIf="station$ | async as station">
   <div>{{ station.stationName }}</div>
-  <br /><br /><br />
+
   <h2>{{ station.journey[0].ti }}</h2>
   <h3>{{ station.journey[0].lastStop }}</h3>
   <h4>Bahnsteig: {{ station.journey[0].tr }}</h4>
 
   <ul>
-    <li *ngFor="let journey of station.journey; let i = index">
-      <ng-container *ngIf="i > 0 && i < 6">
+    <li *ngFor="let journey of station.journey | slice: 0:6; let i = index">
+      <ng-container *ngIf="i > 0">
         <div>{{ journey.ti }}</div>
         <div>{{ journey.lastStop }}</div>
         <div>Bahnsteig: {{ journey.tr }}</div>

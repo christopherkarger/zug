@@ -1,0 +1,22 @@
+{
+  "name": "Zug",
+  "short_name": "Zug",
+  "theme_color": "#383838",
+  "background_color": "#383838",
+  "display": "standalone",
+  "scope": "/zug",
+  "start_url": "/zug",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
