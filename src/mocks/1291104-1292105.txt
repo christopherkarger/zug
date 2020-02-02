@@ -1,0 +1,27 @@
+journeysObj = {
+"headTexts":["Zeit","Fahrt","Nach","Steig","Abfahrten","Aktuell","Ankunft"],
+"stationName":"Wien Geiselbergstraße Bahnhst",
+"stationEvaId":"1291104",
+"boardType":"dep",
+"imgPath":"/img/",
+"iconProductsSubPath":"vs_oebb/",
+"rtInfo":true,
+"journey":[
+{"id":"3331461810","ti":"13:35","da":"02.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"15:06","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331571810","ti":"15:35","da":"02.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"17:07","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331611810","ti":"17:35","da":"02.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"19:07","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331631810","ti":"19:35","da":"02.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"21:05","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331661810","ti":"21:35","da":"02.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"23:05","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3330441810","ti":"05:05","da":"03.02.2020","pr":"S 7","st":"Gänserndorf Bahnhof","lastStop":"Gänserndorf Bahnhof","ati":"05:52","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3330531810","ti":"06:05","da":"03.02.2020","pr":"S 7","st":"Gänserndorf Bahnhof","lastStop":"Gänserndorf Bahnhof","ati":"06:52","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331201810","ti":"06:35","da":"03.02.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"07:13","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331251810","ti":"07:35","da":"03.02.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"08:13","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331291810","ti":"08:02","da":"03.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"09:35","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331331810","ti":"08:35","da":"03.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"10:05","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331361810","ti":"09:35","da":"03.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"11:05","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331381810","ti":"10:35","da":"03.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"12:05","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331391810","ti":"11:35","da":"03.02.2020","pr":"S 7","st":"Laa/Thaya Bahnhof","lastStop":"Laa/Thaya Bahnhof","ati":"13:05","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3331401810","ti":"12:05","da":"03.02.2020","pr":"S 7","st":"Wolkersdorf im Weinviertel Bahnhof","lastStop":"Wolkersdorf im Weinviertel Bahnhof","ati":"12:48","tr":"1","trChg":false,"rt":false,"rta":false}   
+],
+"maxJ":14
+}

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   api: {
     domain: "/mocks",
-    leave: "/${0}.txt"
+    leave: "/${0}-${1}.txt"
   }
 };
 

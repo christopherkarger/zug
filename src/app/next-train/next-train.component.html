@@ -1,7 +1,18 @@
-<div *ngIf="trainSiemens$ | async as siemens">
-  {{ siemens.stationName }}
-</div>
+<div *ngIf="station$ | async as station">
+  <div>{{ station.stationName }}</div>
+  <br /><br /><br />
+  <h2>{{ station.journey[0].ti }}</h2>
+  <h3>{{ station.journey[0].lastStop }}</h3>
+  <h4>Bahnsteig: {{ station.journey[0].tr }}</h4>
 
-<div *ngIf="trainGeisel$ | async as geisel">
-  {{ geisel.stationName }}
+  <ul>
+    <li *ngFor="let journey of station.journey; let i = index">
+      <ng-container *ngIf="i > 0 && i < 6">
+        <div>{{ journey.ti }}</div>
+        <div>{{ journey.lastStop }}</div>
+        <div>Bahnsteig: {{ journey.tr }}</div>
+        <div *ngIf="journey.rt?.dlt">Verspätet: {{ journey.rt.dlt }}</div>
+      </ng-container>
+    </li>
+  </ul>
 </div>

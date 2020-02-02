@@ -4,5 +4,5 @@ import { IMonitor } from "../model/monitor.model";
 
 @Injectable()
 export abstract class TrainLeaveService {
-  abstract getLeave(id: string): Observable<IMonitor>;
+  abstract getLeave(from: string, to: string): Observable<IMonitor>;
 }

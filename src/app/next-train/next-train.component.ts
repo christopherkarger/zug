@@ -1,7 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { TrainLeaveService } from "../services/train-leave.service";
-import { Observable } from "rxjs";
+import { Component, OnInit, Input } from "@angular/core";
 import { IMonitor } from "../model/monitor.model";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-next-train",
@@ -9,14 +8,6 @@ import { IMonitor } from "../model/monitor.model";
   styleUrls: ["./next-train.component.scss"]
 })
 export class NextTrainComponent {
-  private siemensId = "1292105";
-  private geiselId = "8101555";
-
-  trainSiemens$: Observable<IMonitor>;
-  trainGeisel$: Observable<IMonitor>;
-
-  constructor(private tls: TrainLeaveService) {
-    this.trainSiemens$ = this.tls.getLeave(this.siemensId);
-    this.trainGeisel$ = this.tls.getLeave(this.geiselId);
-  }
+  @Input()
+  station$: Observable<IMonitor>;
 }

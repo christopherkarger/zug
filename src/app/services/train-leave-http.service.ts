@@ -12,12 +12,12 @@ export class TrainLeaveHttpService extends TrainLeaveService {
     super();
   }
 
-  getLeave(id: string): Observable<IMonitor> {
+  getLeave(from: string, to: string): Observable<IMonitor> {
     return this.httpService
       .get<string>(
         StringUtilities.replace(
           environment.api.domain + environment.api.leave,
-          [id]
+          [from, to]
         ),
         requestOptions
       )

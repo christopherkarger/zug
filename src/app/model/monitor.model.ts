@@ -3,7 +3,7 @@ export interface Ijourney {
   da: string; // Datum "01.02.2020"
   lastStop: string; //Endstation "Wien Hbf"
   tr: string; // Bahnsteig "2"
-  rt: { dlt: string } | false; // Verzögerung "dlt:11:01"
+  rt?: { dlt?: string }; // Verzögerung "dlt:11:01"
 }
 
 export interface IMonitor {
