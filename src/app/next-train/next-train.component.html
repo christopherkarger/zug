@@ -1,18 +1,33 @@
-<div *ngIf="station$ | async as station">
-  <div>{{ station.stationName }}</div>
+<div class="station" *ngIf="station$ | async as station">
+  <p class="train-station">{{ station.stationName | cleanStationName }}</p>
+  <div class="center next-train">
+    <h2>
+      <ng-container *ngIf="station.journey[0].rt?.dlt; else onTime">
+        <span class="late">{{ station.journey[0].rt.dlt }}</span>
+      </ng-container>
+      <ng-template #onTime>
+        <span class="next-time">{{ station.journey[0].ti }}</span>
+      </ng-template>
+    </h2>
 
-  <h2>{{ station.journey[0].ti }}</h2>
-  <h3>{{ station.journey[0].lastStop }}</h3>
-  <h4>Bahnsteig: {{ station.journey[0].tr }}</h4>
+    <p>{{ station.journey[0].lastStop }}</p>
+    <p><b>Bahnsteig:</b> {{ station.journey[0].tr }}</p>
+  </div>
 
-  <ul>
+  <!-- <ul>
     <li *ngFor="let journey of station.journey | slice: 0:6; let i = index">
       <ng-container *ngIf="i > 0">
-        <div>{{ journey.ti }}</div>
+        <h4>
+          <ng-container *ngIf="journey.rt?.dlt; else nextOnTime">
+            Verspätet: {{ journey.rt.dlt }}
+          </ng-container>
+          <ng-template #nextOnTime>
+            {{ journey.ti }}
+          </ng-template>
+        </h4>
         <div>{{ journey.lastStop }}</div>
         <div>Bahnsteig: {{ journey.tr }}</div>
-        <div *ngIf="journey.rt?.dlt">Verspätet: {{ journey.rt.dlt }}</div>
       </ng-container>
     </li>
-  </ul>
+  </ul> -->
 </div>

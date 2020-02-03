@@ -7,9 +7,26 @@ body {
   font-family: "open_sans";
   font-weight: normal;
   font-size: 14px;
-  background: #fff;
-  color: #333;
+  background: $color1;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.center {
+  text-align: center;
+}
+
+.next-time {
+  color: $color3 !important;
+}
+
+.late {
+  color: $color2 !important;
 }

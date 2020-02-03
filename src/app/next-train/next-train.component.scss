@@ -1,0 +1,29 @@
+@import "../../styles-variables.scss";
+
+:host {
+  display: block;
+  flex: 1 1 auto;
+}
+
+.station {
+  padding: 40px 20px 20px 20px;
+  position: relative;
+}
+
+.next-train {
+  padding-top: 30px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.train-station {
+  font-weight: bold;
+  padding: 6px 7px;
+  background: $color2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

@@ -7,9 +7,9 @@ journeysObj = {
 "iconProductsSubPath":"vs_oebb/",
 "rtInfo":true,
 "journey":[
-{"id":"3333141812","ti":"12:32","da":"02.02.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"13:11","tr":"1","trChg":false,"rt":false,"rta":false}   
+{"id":"3333141812","ti":"12:32","da":"02.02.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"13:11","tr":"1","trChg":false,"rt":{ "dlt": "12:40" },"rta":false}   
 ,{"id":"3333181811","ti":"13:02","da":"02.02.2020","pr":"S 7","st":"Wolfsthal Bahnhof","lastStop":"Wolfsthal Bahnhof","ati":"14:33","tr":"1","trChg":false,"rt":false,"rta":false}   
-,{"id":"3333241810","ti":"13:32","da":"02.02.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"14:11","tr":"1","trChg":false,"rt":false,"rta":false}   
+,{"id":"3333241810","ti":"13:32","da":"02.02.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"14:11","tr":"1","trChg":false,"rt":{ "dlt": "13:40" },"rta":false}   
 ,{"id":"3333181812","ti":"14:02","da":"02.02.2020","pr":"S 7","st":"Wolfsthal Bahnhof","lastStop":"Wolfsthal Bahnhof","ati":"15:33","tr":"1","trChg":false,"rt":false,"rta":false}   
 ,{"id":"3333281810","ti":"14:32","da":"02.02.2020","pr":"S 7","st":"Flughafen Wien Bahnhof","lastStop":"Flughafen Wien Bahnhof","ati":"15:11","tr":"1","trChg":false,"rt":false,"rta":false}   
 ,{"id":"3333181813","ti":"15:02","da":"02.02.2020","pr":"S 7","st":"Wolfsthal Bahnhof","lastStop":"Wolfsthal Bahnhof","ati":"16:33","tr":"1","trChg":false,"rt":false,"rta":false}   
