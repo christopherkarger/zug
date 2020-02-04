@@ -23,7 +23,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": ["src/favicon.ico", "src/assets", "src/mocks"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/oebb.php",
+              "src/manifest.json"
+            ],
             "styles": ["src/styles.scss"],
             "scripts": []
           },
@@ -53,7 +58,12 @@
               ]
             },
             "dev": {
-              "assets": ["src/favicon.ico", "src/assets", "src/mocks"]
+              "assets": [
+                "src/favicon.ico",
+                "src/assets",
+                "src/mocks",
+                "src/manifest.json"
+              ]
             }
           }
         },
