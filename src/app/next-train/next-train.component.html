@@ -10,7 +10,7 @@
       </ng-template>
     </h2>
 
-    <p>{{ station.journey[0].lastStop }}</p>
+    <p>{{ station.journey[0].lastStop | cleanStationName }}</p>
     <p><b>Bahnsteig:</b> {{ station.journey[0].tr }}</p>
   </div>
 
@@ -30,7 +30,7 @@
             {{ journey.ti }}
           </ng-template>
         </div>
-        <div class="stop cell-2">{{ journey.lastStop }}</div>
+        <div class="stop cell-2">{{ journey.lastStop | cleanStationName }}</div>
         <div class="platform cell-3">{{ journey.tr }}</div>
       </ng-container>
     </li>
