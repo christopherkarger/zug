@@ -6,12 +6,13 @@
 }
 
 .station {
-  padding: 40px 20px 20px 20px;
+  padding: 40px 10px 20px 10px;
   position: relative;
 }
 
 .next-train {
-  padding-top: 30px;
+  padding-top: 10px;
+  margin-bottom: 30px;
 }
 
 h2 {
@@ -20,10 +21,39 @@ h2 {
 
 .train-station {
   font-weight: bold;
-  padding: 6px 7px;
+  padding: 6px 10px;
   background: $color2;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.cell-1 {
+  min-width: 50px;
+}
+
+.cell-2 {
+  margin-left: 40px;
+}
+
+.cell-3 {
+  margin-left: auto;
+}
+
+.next-trains-header {
+  display: flex;
+  background: #fff;
+  color: $color1;
+  font-weight: bold;
+  margin: 0 -10px;
+  padding: 4px 10px;
+}
+
+.next-trains-monitor {
+  padding-top: 20px;
+  li {
+    display: flex;
+  }
 }

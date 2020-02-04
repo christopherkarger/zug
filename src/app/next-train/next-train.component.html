@@ -14,20 +14,25 @@
     <p><b>Bahnsteig:</b> {{ station.journey[0].tr }}</p>
   </div>
 
-  <!-- <ul>
-    <li *ngFor="let journey of station.journey | slice: 0:6; let i = index">
-      <ng-container *ngIf="i > 0">
-        <h4>
-          <ng-container *ngIf="journey.rt?.dlt; else nextOnTime">
-            Verspätet: {{ journey.rt.dlt }}
-          </ng-container>
+  <div class="next-trains-header">
+    <div class="time cell-1">Zeit</div>
+    <div class="end-station cell-2">Endstation</div>
+    <div class="platform cell-3">Bahnsteig</div>
+  </div>
+  <ul class="next-trains-monitor">
+    <li *ngFor="let journey of station.journey | slice: 1:5; let i = index">
+      <ng-container>
+        <div class="time cell-1">
+          <span class="late" *ngIf="journey.rt?.dlt; else nextOnTime">
+            {{ journey.rt.dlt }}
+          </span>
           <ng-template #nextOnTime>
             {{ journey.ti }}
           </ng-template>
-        </h4>
-        <div>{{ journey.lastStop }}</div>
-        <div>Bahnsteig: {{ journey.tr }}</div>
+        </div>
+        <div class="stop cell-2">{{ journey.lastStop }}</div>
+        <div class="platform cell-3">{{ journey.tr }}</div>
       </ng-container>
     </li>
-  </ul> -->
+  </ul>
 </div>
