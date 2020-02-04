@@ -35,7 +35,7 @@ h2 {
 }
 
 .cell-2 {
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 .cell-3 {
@@ -53,7 +53,11 @@ h2 {
 
 .next-trains-monitor {
   padding-top: 15px;
+  font-size: 0.9em;
   li {
     display: flex;
+    & + li {
+      margin-top: 1px;
+    }
   }
 }

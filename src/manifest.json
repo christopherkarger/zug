@@ -1,8 +1,8 @@
 {
   "name": "Zug",
   "short_name": "Zug",
-  "theme_color": "#383838",
-  "background_color": "#383838",
+  "theme_color": "#333333",
+  "background_color": "#333333",
   "display": "standalone",
   "scope": "/zug",
   "start_url": "/zug",
