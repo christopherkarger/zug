@@ -3,18 +3,16 @@ import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { NextTrainComponent } from "./next-train/next-train.component";
 import { TrainLeaveService } from "./services/train-leave.service";
 
 import { TrainLeaveHttpService } from "./services/train-leave-http.service";
 import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
-import { MonitorComponent } from './monitor/monitor.component';
-import { CleanStationNamePipe } from './clean-station-name.pipe';
+import { SharedModule } from "./shared.module";
 
 @NgModule({
-  declarations: [AppComponent, NextTrainComponent, MonitorComponent, CleanStationNamePipe],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule],
   providers: [
     {
       provide: TrainLeaveService,

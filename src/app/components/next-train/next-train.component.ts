@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { IMonitor } from "../model/monitor.model";
 import { Observable } from "rxjs";
+import { IMonitor } from "../../model/monitor.model";
 
 @Component({
   selector: "app-next-train",

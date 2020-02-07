@@ -1,7 +1,7 @@
 export interface Ijourney {
   ti: string; // Abfahrtszeit "08:04"
   da: string; // Datum "01.02.2020"
-  lastStop: string; //Endstation "Wien Hbf"
+  lastStop: string; // Endstation "Wien Hbf"
   tr: string; // Bahnsteig "2"
   rt?: { dlt?: string }; // Verzögerung "dlt:11:01"
 }

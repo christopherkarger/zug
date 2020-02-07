@@ -1,4 +1,4 @@
-@import "../../styles-variables.scss";
+@import "../../../styles-variables.scss";
 
 :host {
   display: block;
@@ -6,13 +6,12 @@
 }
 
 .station {
-  padding: 40px 10px 20px 10px;
+  padding: 40px 10px 15px 10px;
   position: relative;
 }
 
 .next-train {
-  padding-top: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -52,7 +51,7 @@ h2 {
 }
 
 .next-trains-monitor {
-  padding-top: 15px;
+  padding-top: 10px;
   font-size: 0.9em;
   li {
     display: flex;
