@@ -1,0 +1,20 @@
+<div class="options">
+  <form [formGroup]="options">
+    <ng-container *ngIf="!stationASelected">
+      <h1>Von wo fährst du weg?</h1>
+      <select formControlName="stationA" (change)="selectedStationA()">
+        <option *ngFor="let station of stations" [value]="station.title">
+          {{ station.title }}
+        </option>
+      </select>
+    </ng-container>
+    <ng-container *ngIf="stationASelected">
+      <h1>Von wo fährst du wieder heim ?</h1>
+      <select formControlName="stationB" (change)="selectedStationB()">
+        <option *ngFor="let station of stations" [value]="station.title">
+          {{ station.title }}
+        </option>
+      </select>
+    </ng-container>
+  </form>
+</div>

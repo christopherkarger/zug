@@ -1,14 +1,14 @@
 import { NgModule } from "@angular/core";
 import { HeaderComponent } from "./components/header/header.component";
 import { CleanStationNamePipe } from "./clean-station-name.pipe";
-import { AppRoutingModule } from "./app-routing.module";
 import { RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
 
 const components = [HeaderComponent, CleanStationNamePipe];
 
 @NgModule({
   declarations: [...components],
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   exports: [...components]
 })
 export class SharedModule {}

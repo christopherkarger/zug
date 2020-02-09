@@ -1,12 +1,13 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
+import { HomeGuard } from "./home.guard";
 
 const routes: Routes = [
   {
     path: "",
     loadChildren: () => import("./home/home.module").then(m => m.HomeModule),
     pathMatch: "full",
-    canActivate: []
+    canActivate: [HomeGuard]
   },
   {
     path: "options",
