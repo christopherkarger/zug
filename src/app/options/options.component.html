@@ -11,9 +11,14 @@
     <ng-container *ngIf="stationASelected">
       <h1>Von wo fährst du wieder heim ?</h1>
       <select formControlName="stationB" (change)="selectedStationB()">
-        <option *ngFor="let station of stations" [value]="station.title">
-          {{ station.title }}
-        </option>
+        <ng-container *ngFor="let station of stations">
+          <option
+            *ngIf="options.get('stationA').value !== station.title"
+            [value]="station.title"
+          >
+            {{ station.title }}
+          </option>
+        </ng-container>
       </select>
     </ng-container>
   </form>
