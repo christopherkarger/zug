@@ -23,16 +23,9 @@ export class HomeComponent implements OnInit {
     private tls: TrainLeaveService,
     private directionCache: DirectionsCacheService
   ) {
-    const savedDirections = this.directionCache.getSavedDirections().split(",");
-    stations.forEach(elm => {
-      if (elm.title === savedDirections[0]) {
-        this.stationAId = elm.id;
-      }
-
-      if (elm.title === savedDirections[1]) {
-        this.stationBId = elm.id;
-      }
-    });
+    const savedStations = this.directionCache.getSavedStations();
+    this.stationAId = savedStations[0];
+    this.stationBId = savedStations[1];
 
     this.stationA$ = this.tls.getLeave(this.stationAId, this.stationBId);
     this.stationB$ = this.tls.getLeave(this.stationBId, this.stationAId);
