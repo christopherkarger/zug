@@ -3,7 +3,32 @@
 }
 
 .app-header {
-  padding: 13px 10px;
+  padding: 13px 15px;
   display: flex;
   justify-content: space-between;
+}
+
+button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  &:before {
+    display: block;
+    font-size: 22px;
+    line-height: 30px;
+    color: #fff;
+    font-family: "font_awesome";
+  }
+  span {
+    display: none;
+  }
+}
+
+.button-options:before {
+  content: "\f238";
+}
+
+.button-home:before {
+  content: "\f022";
 }

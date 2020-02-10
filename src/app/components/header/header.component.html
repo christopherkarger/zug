@@ -1,4 +1,12 @@
 <div class="app-header" *ngIf="showHomeLink || showOptionsLink">
-  <button *ngIf="showHomeLink" [routerLink]="['/']">Home</button>
-  <button *ngIf="showOptionsLink" [routerLink]="['/options']">Options</button>
+  <button class="button-home" *ngIf="showHomeLink" [routerLink]="['/']">
+    <span>Home</span>
+  </button>
+  <button
+    class="button-options"
+    *ngIf="showOptionsLink"
+    [routerLink]="['/options']"
+  >
+    <span>Options</span>
+  </button>
 </div>

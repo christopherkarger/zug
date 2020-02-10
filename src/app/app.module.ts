@@ -8,7 +8,7 @@ import { TrainLeaveService } from "./services/train-leave.service";
 import { TrainLeaveHttpService } from "./services/train-leave-http.service";
 import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
-import { SharedModule } from "./shared.module";
+import { SharedModule } from "./shared-modules/shared.module";
 
 @NgModule({
   declarations: [AppComponent],

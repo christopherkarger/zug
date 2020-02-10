@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { OptionsComponent } from "./options.component";
 import { RouterModule, Routes } from "@angular/router";
-import { SharedModule } from "../shared.module";
+import { SharedModule } from "../shared-modules/shared.module";
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
 

@@ -1,2 +1,14 @@
-<app-next-train [station$]="stationA$"></app-next-train>
-<app-next-train [station$]="stationB$"></app-next-train>
+<ng-container *ngIf="stationA$ | async as stationA">
+  <app-next-train [station]="stationA"></app-next-train>
+</ng-container>
+<app-error
+  *ngIf="stationAfailed"
+  [message]="stationFailedMsg(0, 1)"
+></app-error>
+<ng-container *ngIf="stationB$ | async as stationB">
+  <app-next-train [station]="stationB"></app-next-train>
+</ng-container>
+<app-error
+  *ngIf="stationBfailed"
+  [message]="stationFailedMsg(1, 0)"
+></app-error>
