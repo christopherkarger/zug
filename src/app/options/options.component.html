@@ -2,24 +2,28 @@
   <form [formGroup]="options">
     <ng-container *ngIf="!stationASelected">
       <h1>Von wo fährst du weg?</h1>
-      <select formControlName="stationA" (change)="selectedStationA()">
-        <option *ngFor="let station of stations" [value]="station.title">
-          {{ station.title }}
-        </option>
-      </select>
+      <div class="select">
+        <select formControlName="stationA" (change)="selectedStationA()">
+          <option *ngFor="let station of stations" [value]="station.title">
+            {{ station.title }}
+          </option>
+        </select>
+      </div>
     </ng-container>
     <ng-container *ngIf="stationASelected">
       <h1>Von wo fährst du wieder heim ?</h1>
-      <select formControlName="stationB" (change)="selectedStationB()">
-        <ng-container *ngFor="let station of stations">
-          <option
-            *ngIf="options.get('stationA').value !== station.title"
-            [value]="station.title"
-          >
-            {{ station.title }}
-          </option>
-        </ng-container>
-      </select>
+      <div class="select">
+        <select formControlName="stationB" (change)="selectedStationB()">
+          <ng-container *ngFor="let station of stations">
+            <option
+              *ngIf="options.get('stationA').value !== station.title"
+              [value]="station.title"
+            >
+              {{ station.title }}
+            </option>
+          </ng-container>
+        </select>
+      </div>
     </ng-container>
   </form>
 </div>

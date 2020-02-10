@@ -40,17 +40,65 @@ ul {
 }
 
 p {
-  font-size: 14px;
-  line-height: 1.25;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 30px;
 }
 
-select {
+form {
+  display: block;
+  width: 100%;
+}
+
+input:focus,
+button:focus,
+select:focus {
+  outline: 0;
+}
+
+input:active,
+button:active,
+select:active {
+  opacity: 0.7;
+}
+
+select,
+input[type="date"],
+input[type="time"] {
+  position: relative;
+  -webkit-appearance: none;
   background: #fff;
   border: 0;
   border-radius: 0;
-  padding: 13px 8px;
   width: 100%;
-  appearance: none;
+  height: 40px;
+  padding: 5px 5px 5px 10px;
+  border-radius: 5px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.select {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 3px 0 4px;
+    border-color: #333 transparent transparent transparent;
+    z-index: 2;
+  }
+}
+
+h1 {
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 
 .center {
