@@ -11,3 +11,9 @@ export interface IMonitor {
   boardType: string; // Ankunft oder Abfahrt "dep"
   journey: Ijourney[]; // Einzelne Zeiten
 }
+
+export interface IMonitorLoad {
+  loading?: boolean;
+  failed?: boolean;
+  entity?: IMonitor;
+}

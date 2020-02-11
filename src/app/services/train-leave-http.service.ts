@@ -4,7 +4,7 @@ import { environment } from "src/environments/environment";
 import { requestOptions } from "./request-options";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { IMonitor } from "../model/monitor.model";
+import { IMonitor, IMonitorLoad } from "../model/monitor.model";
 import { StringUtilities } from "../string-utilities";
 
 export class TrainLeaveHttpService extends TrainLeaveService {
@@ -12,7 +12,7 @@ export class TrainLeaveHttpService extends TrainLeaveService {
     super();
   }
 
-  getLeave(from: string, to: string): Observable<IMonitor> {
+  getLeave(from: string, to: string): Observable<IMonitorLoad> {
     return this.httpService
       .get<string>(
         StringUtilities.replace(
@@ -30,9 +30,11 @@ export class TrainLeaveHttpService extends TrainLeaveService {
             throw new Error("Can't convert oebb object");
           }
           return {
-            stationName: convertedResult.stationName,
-            boardType: convertedResult.boardType,
-            journey: convertedResult.journey
+            entity: {
+              stationName: convertedResult.stationName,
+              boardType: convertedResult.boardType,
+              journey: convertedResult.journey
+            }
           };
         })
       );

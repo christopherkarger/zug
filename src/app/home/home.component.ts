@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Observable, of, EMPTY } from "rxjs";
-import { IMonitor } from "../model/monitor.model";
+import { Observable, of, EMPTY, merge } from "rxjs";
+import { IMonitorLoad } from "../model/monitor.model";
 import { TrainLeaveService } from "../services/train-leave.service";
 import { DirectionsCacheService } from "../services/directions.cache.service";
-import { stations } from "../model/stations";
 import { catchError } from "rxjs/operators";
 
 @Component({
@@ -11,19 +10,15 @@ import { catchError } from "rxjs/operators";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  stationAfailed = false;
-  stationBfailed = false;
+  stationA$: Observable<IMonitorLoad>;
+  stationB$: Observable<IMonitorLoad>;
 
   private stationAId: string;
   private stationBId: string;
-
-  stationA$: Observable<IMonitor>;
-  stationB$: Observable<IMonitor>;
-
-  directions: string[];
+  private directions: string[];
 
   @Input()
-  station$: Observable<IMonitor>;
+  station$: Observable<IMonitorLoad>;
 
   constructor(
     private tls: TrainLeaveService,
@@ -34,17 +29,23 @@ export class HomeComponent implements OnInit {
     this.stationAId = savedStations[0];
     this.stationBId = savedStations[1];
 
-    this.stationA$ = this.tls.getLeave(this.stationAId, this.stationBId).pipe(
-      catchError(() => {
-        this.stationAfailed = true;
-        throw new Error(this.stationFailedMsg(0, 1));
-      })
+    this.stationA$ = merge(
+      of({ loading: true }),
+      this.tls.getLeave(this.stationAId, this.stationBId).pipe(
+        catchError(() => {
+          console.error(this.stationFailedMsg(0, 1));
+          return of({ failed: true });
+        })
+      )
     );
-    this.stationB$ = this.tls.getLeave(this.stationBId, this.stationAId).pipe(
-      catchError(() => {
-        this.stationBfailed = true;
-        throw new Error(this.stationFailedMsg(1, 0));
-      })
+    this.stationB$ = merge(
+      of({ loading: true }),
+      this.tls.getLeave(this.stationBId, this.stationAId).pipe(
+        catchError(() => {
+          console.error(this.stationFailedMsg(1, 0));
+          return of({ failed: true });
+        })
+      )
     );
   }
 
