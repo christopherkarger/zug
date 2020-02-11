@@ -1,5 +1,10 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
 .options {
-  padding: 20px;
   display: flex;
   box-sizing: border-box;
   min-height: 500px;

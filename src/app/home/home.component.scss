@@ -1,5 +1,15 @@
-.view {
+:host {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
-  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.station {
+  flex: 1 1 auto;
 }
