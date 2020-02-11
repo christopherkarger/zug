@@ -11,7 +11,7 @@
       </div>
     </ng-container>
     <ng-container *ngIf="stationASelected">
-      <h1>Von wo fährst du wieder heim ?</h1>
+      <h1>Von wo fährst du wieder nach Hause ?</h1>
       <div class="select">
         <select formControlName="stationB" (change)="selectedStationB()">
           <ng-container *ngFor="let station of stations">

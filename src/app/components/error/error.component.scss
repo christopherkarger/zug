@@ -1,5 +1,9 @@
 @import "../../../styles-variables.scss";
 
+:host {
+  display: block;
+}
+
 .error {
   position: relative;
   background: $color3;

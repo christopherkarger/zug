@@ -2,12 +2,14 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
+  background: url("../../assets/train-station.svg") 0 100% no-repeat;
+  background-size: 100% auto;
 }
 
 .options {
   display: flex;
   box-sizing: border-box;
-  min-height: 500px;
+  min-height: 300px;
   align-items: center;
   justify-content: center;
 }
