@@ -3,9 +3,9 @@ import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HeaderComponent } from "../components/header/header.component";
 import { CleanStationNamePipe } from "../clean-station-name.pipe";
-import { ErrorComponent } from "../components/error/error.component";
+import { MsgBoxComponent } from "../components/msg-box/msg-box.component";
 
-const components = [HeaderComponent, ErrorComponent, CleanStationNamePipe];
+const components = [HeaderComponent, MsgBoxComponent, CleanStationNamePipe];
 
 @NgModule({
   declarations: [...components],

@@ -1,38 +1,58 @@
 <div class="station-view">
-  <p class="train-station">{{ station.stationName | cleanStationName }}</p>
-  <div class="center next-train">
-    <h2>
-      <ng-container *ngIf="station.journey[0].rt?.dlt; else onTime">
-        <span class="late">{{ station.journey[0].rt.dlt }}</span>
-      </ng-container>
-      <ng-template #onTime>
-        <span class="next-time">{{ station.journey[0].ti }}</span>
-      </ng-template>
-    </h2>
+  <div
+    class="station-view-inner"
+    *ngIf="station.journey && station.journey.length"
+  >
+    <p class="train-station" *ngIf="station.stationName">
+      {{ station.stationName | cleanStationName }}
+    </p>
 
-    <p>{{ station.journey[0].lastStop | cleanStationName }}</p>
-    <p><b>Bahnsteig:</b> {{ station.journey[0].tr }}</p>
-  </div>
-
-  <div class="next-trains-header">
-    <div class="time cell-1">Zeit</div>
-    <div class="end-station cell-2">Endstation</div>
-    <div class="platform cell-3">Bahnsteig</div>
-  </div>
-  <ul class="next-trains-monitor">
-    <li *ngFor="let journey of station.journey | slice: 1:5; let i = index">
-      <ng-container>
-        <div class="time cell-1">
-          <span class="late" *ngIf="journey.rt?.dlt; else nextOnTime">
-            {{ journey.rt.dlt }}
-          </span>
-          <ng-template #nextOnTime>
-            {{ journey.ti }}
+    <div class="center next-train">
+      <ng-container *ngIf="station.journey[0]">
+        <h2>
+          <ng-container *ngIf="station.journey[0].rt?.dlt; else onTime">
+            <span class="late">{{ station.journey[0].rt.dlt }}</span>
+          </ng-container>
+          <ng-template #onTime>
+            <span class="next-time">{{ station.journey[0].ti }}</span>
           </ng-template>
-        </div>
-        <div class="stop cell-2">{{ journey.lastStop | cleanStationName }}</div>
-        <div class="platform cell-3">{{ journey.tr }}</div>
+        </h2>
+
+        <p>{{ station.journey[0].lastStop | cleanStationName }}</p>
+        <p><b>Bahnsteig:</b> {{ station.journey[0].tr }}</p>
       </ng-container>
-    </li>
-  </ul>
+    </div>
+
+    <div class="next-trains-header">
+      <div class="time cell-1">Zeit</div>
+      <div class="end-station cell-2">Endstation</div>
+      <div class="platform cell-3">Bahnsteig</div>
+    </div>
+    <ul class="next-trains-monitor">
+      <li *ngFor="let journey of station.journey | slice: 1:5; let i = index">
+        <ng-container>
+          <div class="time cell-1">
+            <span class="late" *ngIf="journey.rt?.dlt; else nextOnTime">
+              {{ journey.rt.dlt }}
+            </span>
+            <ng-template #nextOnTime>
+              {{ journey.ti }}
+            </ng-template>
+          </div>
+          <div class="stop cell-2">
+            {{ journey.lastStop | cleanStationName }}
+          </div>
+          <div class="platform cell-3">{{ journey.tr }}</div>
+        </ng-container>
+      </li>
+    </ul>
+  </div>
+
+  <ng-container *ngIf="!station.journey || station.journey.length === 0">
+    <app-msg-box
+      boxstyle="info"
+      message="Zur ausgewählten Verbindung konnten keine Züge gefunden werden!"
+    >
+    </app-msg-box>
+  </ng-container>
 </div>

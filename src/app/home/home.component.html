@@ -9,10 +9,11 @@
         Lade Verbindung...
       </div>
 
-      <app-error
+      <app-msg-box
         *ngIf="stationA.failed"
         [message]="stationFailedMsg(0, 1)"
-      ></app-error>
+        boxstyle="error"
+      ></app-msg-box>
     </ng-container>
   </div>
 
@@ -26,10 +27,11 @@
         Lade Verbindung...
       </div>
 
-      <app-error
+      <app-msg-box
         *ngIf="stationB.failed"
         [message]="stationFailedMsg(1, 0)"
-      ></app-error>
+        boxstyle="error"
+      ></app-msg-box>
     </ng-container>
   </div>
 </div>

@@ -4,14 +4,28 @@
   display: block;
 }
 
-.error {
+.msg-box {
   position: relative;
-  background: $color3;
   color: #fff;
   padding: 15px;
   padding-left: 50px;
   margin-bottom: 20px;
   border: 2px solid #fff;
+
+  &.error {
+    background: $color3;
+    &:before {
+      content: "\F0E7";
+    }
+  }
+
+  &.info {
+    background: $color2;
+    &:before {
+      content: "\F05A";
+      left: 15px;
+    }
+  }
 
   &:before {
     display: block;
@@ -22,6 +36,5 @@
     font-size: 22px;
     color: #fff;
     font-family: "font_awesome";
-    content: "\F0E7";
   }
 }

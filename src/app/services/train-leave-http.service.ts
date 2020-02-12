@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { IMonitor, IMonitorLoad } from "../model/monitor.model";
 import { StringUtilities } from "../string-utilities";
+import { Validator } from "src/validator";
 
 export class TrainLeaveHttpService extends TrainLeaveService {
   constructor(private httpService: HttpService) {
@@ -31,9 +32,9 @@ export class TrainLeaveHttpService extends TrainLeaveService {
           }
           return {
             entity: {
-              stationName: convertedResult.stationName,
-              boardType: convertedResult.boardType,
-              journey: convertedResult.journey
+              stationName: Validator.require(convertedResult.stationName),
+              boardType: Validator.require(convertedResult.boardType),
+              journey: convertedResult.journey ? convertedResult.journey : []
             }
           };
         })

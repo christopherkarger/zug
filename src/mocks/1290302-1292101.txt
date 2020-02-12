@@ -1,0 +1,10 @@
+journeysObj = {
+"headTexts":["Zeit","Fahrt","Nach","Steig","Abfahrten","Aktuell","Ankunft"],
+"stationName":"",
+"stationEvaId":"",
+"boardType":"dep",
+"imgPath":"/img/",
+"iconProductsSubPath":"vs_oebb/",
+"rtInfo":true,
+"maxJ":null
+}
