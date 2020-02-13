@@ -26,4 +26,11 @@
       </div>
     </ng-container>
   </form>
+  <div class="train-animation">
+    <div
+      class="train-svg"
+      [class.drive-away]="!stationASelected"
+      [class.drive-home]="stationASelected"
+    ></div>
+  </div>
 </div>
