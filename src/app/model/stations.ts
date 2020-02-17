@@ -18,5 +18,9 @@ export const stations = [
   {
     title: "Wien Mitte",
     id: "1290302"
+  },
+  {
+    title: "Brünnerstraße",
+    id: "1292106"
   }
 ];
