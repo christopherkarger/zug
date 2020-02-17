@@ -13,7 +13,10 @@ export class CleanStationNamePipe implements PipeTransform {
       .replace("&#196;", "Ä")
       .replace("&#228;", "ä")
       .replace("&#214;", "Ö")
-      .replace("&#246;", "ö");
+      .replace("&#246;", "ö")
+      .replace("&#220;", "Ü")
+      .replace("&#252;", "ü");
+
     return convertedStr;
   }
 }
