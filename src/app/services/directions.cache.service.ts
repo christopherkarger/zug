@@ -13,19 +13,17 @@ export class DirectionsCacheService {
     const savedDirections = this.getSavedDirections().split(",");
     const savedStations: string[] = [];
     stations.forEach(elm => {
-      if (elm.title === savedDirections[0]) {
-        savedStations[0] = elm.id;
-      }
-
-      if (elm.title === savedDirections[1]) {
-        savedStations[1] = elm.id;
-      }
+      savedDirections.forEach((dir, index) => {
+        if (elm.title === dir) {
+          savedStations[index] = elm.id;
+        }
+      });
     });
 
     return savedStations;
   }
 
-  saveDirections(directionA: string, directionB: string): void {
-    localStorage.setItem("directions", `${directionA},${directionB}`);
+  saveDirections(directions: [string, string, string, string]): void {
+    localStorage.setItem("directions", `${[...directions]}`);
   }
 }

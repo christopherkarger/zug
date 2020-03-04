@@ -13,8 +13,12 @@ export class HomeComponent implements OnInit {
   stationA$: Observable<IMonitorLoad>;
   stationB$: Observable<IMonitorLoad>;
 
-  private stationAId: string;
-  private stationBId: string;
+  private awayStationA: string;
+  private awayStationB: string;
+  private homeStationA: string;
+  private homeStationB: string;
+
+  private savedStations: string[];
   private directions: string[];
 
   @Input()
@@ -24,33 +28,43 @@ export class HomeComponent implements OnInit {
     private tls: TrainLeaveService,
     private directionCache: DirectionsCacheService
   ) {
-    const savedStations = this.directionCache.getSavedStations();
+    this.savedStations = this.directionCache.getSavedStations();
     this.directions = this.directionCache.getSavedDirections().split(",");
-    this.stationAId = savedStations[0];
-    this.stationBId = savedStations[1];
+
+    if (this.savedStations.length === 2) {
+      this.awayStationA = this.homeStationB = this.savedStations[0];
+      this.awayStationB = this.homeStationA = this.savedStations[1];
+    } else if (this.savedStations.length === 4) {
+      this.awayStationA = this.savedStations[0];
+      this.awayStationB = this.savedStations[1];
+      this.homeStationA = this.savedStations[2];
+      this.homeStationB = this.savedStations[3];
+    } else {
+      throw new Error("not enough saved stations");
+    }
 
     this.stationA$ = merge(
       of({ loading: true }),
-      this.tls.getLeave(this.stationAId, this.stationBId).pipe(
+      this.tls.getLeave(this.awayStationA, this.awayStationB).pipe(
         catchError(() => {
-          console.error(this.stationFailedMsg(0, 1));
+          console.error(this.stationFailedMsg());
           return of({ failed: true });
         })
       )
     );
     this.stationB$ = merge(
       of({ loading: true }),
-      this.tls.getLeave(this.stationBId, this.stationAId).pipe(
+      this.tls.getLeave(this.homeStationA, this.homeStationB).pipe(
         catchError(() => {
-          console.error(this.stationFailedMsg(1, 0));
+          console.error(this.stationFailedMsg());
           return of({ failed: true });
         })
       )
     );
   }
 
-  stationFailedMsg(from: number, to: number): string {
-    return `Verbindung von ${this.directions[from]} nach ${this.directions[to]} konnte nicht geladen werden!`;
+  stationFailedMsg(): string {
+    return `Zugverbindung konnte nicht geladen werden!`;
   }
 
   ngOnInit(): void {}

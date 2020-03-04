@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import { stations } from "../model/stations";
 import { DirectionsCacheService } from "../services/directions.cache.service";
 import { Router } from "@angular/router";
@@ -11,27 +11,85 @@ import { Router } from "@angular/router";
 export class OptionsComponent implements OnInit {
   options: FormGroup;
   stations = stations;
-  stationASelected = false;
+  awaySelected = false;
 
   constructor(
     private fb: FormBuilder,
     private directionCache: DirectionsCacheService,
     private router: Router
   ) {
+    const awayStationA = new FormControl("");
+    const awayStationB = new FormControl("");
+    const homeStationA = new FormControl("");
+    const homeStationB = new FormControl("");
+
     this.options = this.fb.group({
-      stationA: "",
-      stationB: ""
+      awayStationA: awayStationA,
+      awayStationB: awayStationB,
+      homeStationA: homeStationA,
+      homeStationB: homeStationB
+    });
+
+    awayStationA.valueChanges.subscribe({
+      next: val => {
+        this.checkAway();
+      }
+    });
+
+    awayStationB.valueChanges.subscribe({
+      next: val => {
+        this.checkAway();
+      }
+    });
+
+    homeStationA.valueChanges.subscribe({
+      next: val => {
+        this.checkHome();
+      }
+    });
+
+    homeStationB.valueChanges.subscribe({
+      next: val => {
+        this.checkHome();
+      }
     });
   }
 
-  selectedStationA(): void {
-    this.stationASelected = true;
+  private checkAway() {
+    const awayStationA = this.options.get("awayStationA").value;
+    const awayStationB = this.options.get("awayStationB").value;
+    this.awaySelected = this.checkStations(awayStationA, awayStationB);
   }
 
-  selectedStationB(): void {
-    const dirA = this.options.value.stationA;
-    const dirB = this.options.value.stationB;
-    this.directionCache.saveDirections(dirA, dirB);
+  private checkHome() {
+    const homeStationA = this.options.get("homeStationA").value;
+    const homeStationB = this.options.get("homeStationB").value;
+    if (this.checkStations(homeStationA, homeStationB)) {
+      this.selectedbackHome();
+    }
+  }
+
+  private checkStations(stationA: string, stationB: string): boolean {
+    if (stationA === "" || stationB === "") {
+      return false;
+    } else if (stationA !== stationB) {
+      return true;
+    }
+
+    return false;
+  }
+
+  private selectedbackHome(): void {
+    const awayStationA = this.options.get("awayStationA").value;
+    const awayStationB = this.options.get("awayStationB").value;
+    const homeStationA = this.options.get("homeStationA").value;
+    const homeStationB = this.options.get("homeStationB").value;
+    this.directionCache.saveDirections([
+      awayStationA,
+      awayStationB,
+      homeStationA,
+      homeStationB
+    ]);
     this.router.navigate(["/"]);
   }
 

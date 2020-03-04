@@ -1,36 +1,81 @@
 <div class="options wrapper">
   <form [formGroup]="options">
-    <ng-container *ngIf="!stationASelected">
+    <ng-container *ngIf="!awaySelected">
       <h1>Von wo fährst du weg?</h1>
+      <h2>Start:</h2>
       <div class="select">
-        <select formControlName="stationA" (change)="selectedStationA()">
+        <select
+          formControlName="awayStationA"
+          [class.error]="
+            options.get('awayStationA').value !== '' &&
+            options.get('awayStationA').value ===
+              options.get('awayStationB').value
+          "
+        >
+          <option *ngFor="let station of stations" [value]="station.title">
+            {{ station.title }}
+          </option>
+        </select>
+      </div>
+
+      <h2>Ziel:</h2>
+      <div class="select">
+        <select
+          formControlName="awayStationB"
+          [class.error]="
+            options.get('awayStationB').value !== '' &&
+            options.get('awayStationA').value ===
+              options.get('awayStationB').value
+          "
+        >
           <option *ngFor="let station of stations" [value]="station.title">
             {{ station.title }}
           </option>
         </select>
       </div>
     </ng-container>
-    <ng-container *ngIf="stationASelected">
+
+    <ng-container *ngIf="awaySelected">
       <h1>Von wo fährst du wieder nach Hause ?</h1>
+      <h2>Start:</h2>
       <div class="select">
-        <select formControlName="stationB" (change)="selectedStationB()">
-          <ng-container *ngFor="let station of stations">
-            <option
-              *ngIf="options.get('stationA').value !== station.title"
-              [value]="station.title"
-            >
-              {{ station.title }}
-            </option>
-          </ng-container>
+        <select
+          formControlName="homeStationA"
+          [class.error]="
+            options.get('homeStationA').value !== '' &&
+            options.get('homeStationA').value ===
+              options.get('homeStationB').value
+          "
+        >
+          <option *ngFor="let station of stations" [value]="station.title">
+            {{ station.title }}
+          </option>
+        </select>
+      </div>
+
+      <h2>Ziel:</h2>
+      <div class="select">
+        <select
+          formControlName="homeStationB"
+          [class.error]="
+            options.get('homeStationB').value !== '' &&
+            options.get('homeStationA').value ===
+              options.get('homeStationB').value
+          "
+        >
+          <option *ngFor="let station of stations" [value]="station.title">
+            {{ station.title }}
+          </option>
         </select>
       </div>
     </ng-container>
   </form>
+
   <div class="train-animation">
     <div
       class="train-svg"
-      [class.drive-away]="!stationASelected"
-      [class.drive-home]="stationASelected"
+      [class.drive-away]="!awaySelected"
+      [class.drive-home]="awaySelected"
     ></div>
   </div>
 </div>

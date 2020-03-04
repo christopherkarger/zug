@@ -11,7 +11,7 @@
 
       <app-msg-box
         *ngIf="stationA.failed"
-        [message]="stationFailedMsg(0, 1)"
+        [message]="stationFailedMsg()"
         boxstyle="error"
       ></app-msg-box>
     </ng-container>
@@ -29,7 +29,7 @@
 
       <app-msg-box
         *ngIf="stationB.failed"
-        [message]="stationFailedMsg(1, 0)"
+        [message]="stationFailedMsg()"
         boxstyle="error"
       ></app-msg-box>
     </ng-container>
