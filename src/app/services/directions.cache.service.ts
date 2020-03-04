@@ -9,6 +9,11 @@ export class DirectionsCacheService {
     return localStorage.getItem("directions");
   }
 
+  isValid(): boolean {
+    const savedDirections = this.getSavedDirections().split(",");
+    return savedDirections.length === 2 || savedDirections.length === 4;
+  }
+
   getSavedStations(): string[] {
     const savedDirections = this.getSavedDirections().split(",");
     const savedStations: string[] = [];

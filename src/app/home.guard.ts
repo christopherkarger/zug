@@ -9,11 +9,7 @@ export class HomeGuard implements CanActivate {
     private router: Router
   ) {}
   canActivate(): boolean {
-    const savedDirections = this.directionCache.getSavedDirections();
-    const dirArr = savedDirections.split(",");
-    const validStations = dirArr.length === 2 || dirArr.length === 4;
-
-    if (!savedDirections || !validStations) {
+    if (!this.directionCache.isValid()) {
       this.router.navigate(["/options"]);
       return false;
     }

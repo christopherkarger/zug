@@ -25,11 +25,7 @@ export class HeaderComponent implements OnInit {
 
         if (evt.url === "/options") {
           this.showOptionsLink = false;
-          const savedDirections = this.directionCache.getSavedDirections();
-          const dirArr = savedDirections.split(",");
-          const validStations = dirArr.length === 2 || dirArr.length === 4;
-
-          if (!savedDirections || !validStations) {
+          if (!this.directionCache.isValid()) {
             this.showHomeLink = false;
           }
         } else {
