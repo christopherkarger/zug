@@ -10,6 +10,9 @@ export class DirectionsCacheService {
   }
 
   isValid(): boolean {
+    if (!this.getSavedDirections()) {
+      return false;
+    }
     const savedDirections = this.getSavedDirections().split(",");
     return savedDirections.length === 2 || savedDirections.length === 4;
   }

@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
   }
 
   stationFailedMsg(): string {
-    return `Zugverbindung konnte nicht geladen werden!`;
+    return `Zugverbindung konnte nicht geladen werden! Versuche es erneut oder wähle eine andere Verbindung aus.`;
   }
 
   ngOnInit(): void {}
