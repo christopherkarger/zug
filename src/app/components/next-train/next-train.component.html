@@ -3,9 +3,10 @@
     class="station-view-inner"
     *ngIf="station?.journey && station?.journey?.length"
   >
-    <p class="train-station" *ngIf="station?.stationName">
-      {{ station?.stationName | cleanStationName }}
-    </p>
+    <div class="train-station">
+      <span class="from">Von: {{ station?.fromStationName }}</span>
+      <span class="to">Nach: {{ station?.toStationName }}</span>
+    </div>
 
     <div class="center next-train">
       <ng-container *ngIf="(station?.journey)[0]">

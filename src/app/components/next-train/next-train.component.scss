@@ -25,12 +25,58 @@ p {
   margin-bottom: 0;
 }
 
+@keyframes flip {
+  0% {
+    opacity: 1;
+    transform: rotateX(-90deg);
+    transform-origin: 0 100%;
+  }
+
+  5% {
+    transform: rotateX(0);
+  }
+
+  45% {
+    transform: rotateX(0);
+    transform-origin: 0 0;
+    opacity: 1;
+  }
+
+  54% {
+    opacity: 0;
+  }
+
+  56% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .train-station {
+  position: relative;
   font-weight: bold;
-  padding: 6px 10px;
+  font-size: 16px;
+  padding: 0 10px;
+  height: 35px;
   background: $color2;
   box-sizing: border-box;
   margin-bottom: 5px;
+  .from,
+  .to {
+    opacity: 0;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    display: block;
+    animation: flip 10s infinite;
+  }
+
+  .to {
+    animation-delay: 5s;
+  }
 }
 
 .cell-1 {

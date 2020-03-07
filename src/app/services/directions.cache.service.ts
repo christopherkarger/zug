@@ -81,4 +81,17 @@ export class DirectionsCacheService {
 
     return savedStations;
   }
+
+  getStationNameById(id: string): string | undefined {
+    const allIds = this.getStoredStationsIds();
+    let nameOfStation: string | undefined;
+
+    stations.forEach(elm => {
+      if (elm.id === id) {
+        nameOfStation = elm.title;
+      }
+    });
+
+    return nameOfStation;
+  }
 }

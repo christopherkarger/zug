@@ -7,7 +7,8 @@ export interface Ijourney {
 }
 
 export interface IMonitor {
-  stationName: string; // Bahnhofsstation "Wr.Neustadt Hbf"
+  fromStationName: string;
+  toStationName: string;
   boardType: string; // Ankunft oder Abfahrt "dep"
   journey: Ijourney[]; // Einzelne Zeiten
 }

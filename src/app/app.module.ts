@@ -9,6 +9,7 @@ import { TrainLeaveHttpService } from "./services/train-leave-http.service";
 import { HttpService } from "./services/http.service";
 import { HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "./shared-modules/shared.module";
+import { DirectionsCacheService } from "./services/directions.cache.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,10 +17,13 @@ import { SharedModule } from "./shared-modules/shared.module";
   providers: [
     {
       provide: TrainLeaveService,
-      useFactory: (httpClient: HttpService) => {
-        return new TrainLeaveHttpService(httpClient);
+      useFactory: (
+        httpClient: HttpService,
+        directionCache: DirectionsCacheService
+      ) => {
+        return new TrainLeaveHttpService(httpClient, directionCache);
       },
-      deps: [HttpService]
+      deps: [HttpService, DirectionsCacheService]
     }
   ],
   bootstrap: [AppComponent]
