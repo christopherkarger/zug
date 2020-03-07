@@ -68,7 +68,7 @@ export class DirectionsCacheService {
     };
   }
 
-  getStoredStationsIds(): string[] {
+  private getStoredStationsIds(): string[] {
     const savedDirections = this.getStoredDirections();
     const savedStations: string[] = [];
     stations.forEach(elm => {
