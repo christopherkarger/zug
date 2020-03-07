@@ -12,8 +12,18 @@ export interface IStations {
   providedIn: "root"
 })
 export class DirectionsCacheService {
-  saveDirections(directions: [string, string, string, string]): void {
-    localStorage.setItem("directions", `${[...directions]}`);
+  private getStoredStationsIds(): string[] {
+    const savedDirections = this.getStoredDirections();
+    const savedStations: string[] = [];
+    stations.forEach(elm => {
+      savedDirections.forEach((dir, index) => {
+        if (elm.title === dir) {
+          savedStations[index] = elm.id;
+        }
+      });
+    });
+
+    return savedStations;
   }
 
   private getStoredDirections(): string[] {
@@ -24,16 +34,17 @@ export class DirectionsCacheService {
     return [];
   }
 
+  saveDirections(directions: [string, string, string, string]): void {
+    localStorage.setItem("directions", `${[...directions]}`);
+  }
+
   isValid(): boolean {
-    if (
-      this.getStoredDirections().length === 0 ||
-      !this.getSavedStations(true)
-    ) {
+    const storedDirections = this.getStoredDirections();
+    if (storedDirections.length === 0 || !this.getSavedStations(true)) {
       return false;
     }
 
-    const savedDirections = this.getStoredDirections();
-    return savedDirections.length === 2 || savedDirections.length === 4;
+    return storedDirections.length === 2 || storedDirections.length === 4;
   }
 
   getSavedStations(getIds?: boolean): IStations | undefined {
@@ -66,20 +77,6 @@ export class DirectionsCacheService {
       homeStationA,
       homeStationB
     };
-  }
-
-  private getStoredStationsIds(): string[] {
-    const savedDirections = this.getStoredDirections();
-    const savedStations: string[] = [];
-    stations.forEach(elm => {
-      savedDirections.forEach((dir, index) => {
-        if (elm.title === dir) {
-          savedStations[index] = elm.id;
-        }
-      });
-    });
-
-    return savedStations;
   }
 
   getStationNameById(id: string): string | undefined {

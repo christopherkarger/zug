@@ -72,10 +72,11 @@ p {
     top: 6px;
     display: block;
     animation: flip 10s infinite;
+    animation-delay: 0.5s;
   }
 
   .to {
-    animation-delay: 5s;
+    animation-delay: 5.5s;
   }
 }
 
