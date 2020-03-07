@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import { stations } from "../model/stations";
 import { DirectionsCacheService } from "../services/directions.cache.service";
 import { Router } from "@angular/router";
+import { Validator } from "src/validator";
 
 @Component({
   templateUrl: "./options.component.html",
@@ -12,6 +13,14 @@ export class OptionsComponent implements OnInit {
   options: FormGroup;
   stations = stations;
   awaySelected = false;
+
+  getStation(station: string): string | undefined {
+    const st = this.options.get(station);
+    if (st) {
+      return st.value;
+    }
+    return undefined;
+  }
 
   constructor(
     private fb: FormBuilder,
@@ -56,14 +65,14 @@ export class OptionsComponent implements OnInit {
   }
 
   private checkAway() {
-    const awayStationA = this.options.get("awayStationA").value;
-    const awayStationB = this.options.get("awayStationB").value;
+    const awayStationA = Validator.require(this.getStation("awayStationA"));
+    const awayStationB = Validator.require(this.getStation("awayStationB"));
     this.awaySelected = this.checkStations(awayStationA, awayStationB);
   }
 
   private checkHome() {
-    const homeStationA = this.options.get("homeStationA").value;
-    const homeStationB = this.options.get("homeStationB").value;
+    const homeStationA = Validator.require(this.getStation("homeStationA"));
+    const homeStationB = Validator.require(this.getStation("homeStationB"));
     if (this.checkStations(homeStationA, homeStationB)) {
       this.selectedbackHome();
     }
@@ -80,10 +89,10 @@ export class OptionsComponent implements OnInit {
   }
 
   private selectedbackHome(): void {
-    const awayStationA = this.options.get("awayStationA").value;
-    const awayStationB = this.options.get("awayStationB").value;
-    const homeStationA = this.options.get("homeStationA").value;
-    const homeStationB = this.options.get("homeStationB").value;
+    const awayStationA = Validator.require(this.getStation("awayStationA"));
+    const awayStationB = Validator.require(this.getStation("awayStationB"));
+    const homeStationA = Validator.require(this.getStation("homeStationA"));
+    const homeStationB = Validator.require(this.getStation("homeStationB"));
     this.directionCache.saveDirections([
       awayStationA,
       awayStationB,

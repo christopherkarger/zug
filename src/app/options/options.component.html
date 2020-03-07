@@ -7,9 +7,9 @@
         <select
           formControlName="awayStationA"
           [class.error]="
-            options.get('awayStationA').value !== '' &&
-            options.get('awayStationA').value ===
-              options.get('awayStationB').value
+            options.get('awayStationA')?.value !== '' &&
+            options.get('awayStationA')?.value ===
+              options.get('awayStationB')?.value
           "
         >
           <option *ngFor="let station of stations" [value]="station.title">
@@ -23,9 +23,9 @@
         <select
           formControlName="awayStationB"
           [class.error]="
-            options.get('awayStationB').value !== '' &&
-            options.get('awayStationA').value ===
-              options.get('awayStationB').value
+            options.get('awayStationB')?.value !== '' &&
+            options.get('awayStationA')?.value ===
+              options.get('awayStationB')?.value
           "
         >
           <option *ngFor="let station of stations" [value]="station.title">
@@ -42,9 +42,9 @@
         <select
           formControlName="homeStationA"
           [class.error]="
-            options.get('homeStationA').value !== '' &&
-            options.get('homeStationA').value ===
-              options.get('homeStationB').value
+            options.get('homeStationA')?.value !== '' &&
+            options.get('homeStationA')?.value ===
+              options.get('homeStationB')?.value
           "
         >
           <option *ngFor="let station of stations" [value]="station.title">
@@ -58,9 +58,9 @@
         <select
           formControlName="homeStationB"
           [class.error]="
-            options.get('homeStationB').value !== '' &&
-            options.get('homeStationA').value ===
-              options.get('homeStationB').value
+            options.get('homeStationB')?.value !== '' &&
+            options.get('homeStationA')?.value ===
+              options.get('homeStationB')?.value
           "
         >
           <option *ngFor="let station of stations" [value]="station.title">

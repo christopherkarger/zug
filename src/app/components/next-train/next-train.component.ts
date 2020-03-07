@@ -9,5 +9,5 @@ import { IMonitor } from "../../model/monitor.model";
 })
 export class NextTrainComponent {
   @Input()
-  station: IMonitor;
+  station?: IMonitor;
 }

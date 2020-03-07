@@ -1,16 +1,16 @@
 <div class="home wrapper">
   <div class="station">
     <ng-container *ngIf="stationA$ | async as stationA">
-      <ng-container *ngIf="stationA.entity">
-        <app-next-train [station]="stationA.entity"></app-next-train>
+      <ng-container *ngIf="stationA?.entity">
+        <app-next-train [station]="stationA?.entity"></app-next-train>
       </ng-container>
 
-      <div *ngIf="stationA.loading">
+      <div *ngIf="stationA?.loading">
         Lade Verbindung...
       </div>
 
       <app-msg-box
-        *ngIf="stationA.failed"
+        *ngIf="stationA?.failed"
         [message]="stationFailedMsg()"
         boxstyle="error"
       ></app-msg-box>
@@ -19,16 +19,16 @@
 
   <div class="station">
     <ng-container *ngIf="stationB$ | async as stationB">
-      <ng-container *ngIf="stationB.entity">
-        <app-next-train [station]="stationB.entity"></app-next-train>
+      <ng-container *ngIf="stationB?.entity">
+        <app-next-train [station]="stationB?.entity"></app-next-train>
       </ng-container>
 
-      <div *ngIf="stationB.loading">
+      <div *ngIf="stationB?.loading">
         Lade Verbindung...
       </div>
 
       <app-msg-box
-        *ngIf="stationB.failed"
+        *ngIf="stationB?.failed"
         [message]="stationFailedMsg()"
         boxstyle="error"
       ></app-msg-box>
