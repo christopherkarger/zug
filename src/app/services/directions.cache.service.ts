@@ -80,7 +80,6 @@ export class DirectionsCacheService {
   }
 
   getStationNameById(id: string): string | undefined {
-    const allIds = this.getStoredStationsIds();
     let nameOfStation: string | undefined;
 
     stations.forEach(elm => {
