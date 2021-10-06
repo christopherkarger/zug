@@ -6,16 +6,20 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class CleanStationNamePipe implements PipeTransform {
   transform(value: any, ...args: any[]): any {
     let convertedStr = value;
-    convertedStr = convertedStr
-      .replaceAll("Bahnhst", "")
-      .replaceAll("&#38;", "&")
-      .replaceAll("&#223;", "ß")
-      .replaceAll("&#196;", "Ä")
-      .replaceAll("&#228;", "ä")
-      .replaceAll("&#214;", "Ö")
-      .replaceAll("&#246;", "ö")
-      .replaceAll("&#220;", "Ü")
-      .replaceAll("&#252;", "ü");
+    try {
+      convertedStr = convertedStr
+        .replace(/Bahnhst/g, "")
+        .replace(/&#38;/g, "&")
+        .replace(/&#223;/g, "ß")
+        .replace(/&#196;/g, "Ä")
+        .replace(/&#228;/g, "ä")
+        .replace(/&#214;/g, "Ö")
+        .replace(/&#246;/g, "ö")
+        .replace(/&#220;/g, "Ü")
+        .replace(/&#252;/g, "ü");
+    } catch {
+      console.error("Browser does not support replaceAll");
+    }
 
     return convertedStr;
   }
