@@ -1,13 +1,13 @@
-import { TrainLeaveService } from "./train-leave.service";
-import { HttpService } from "./http.service";
-import { environment } from "src/environments/environment";
-import { requestOptions } from "./request-options";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
+import { Validator } from "src/validator";
 import { IMonitor, IMonitorLoad } from "../model/monitor.model";
 import { StringUtilities } from "../string-utilities";
-import { Validator } from "src/validator";
 import { DirectionsCacheService } from "./directions.cache.service";
+import { HttpService } from "./http.service";
+import { requestOptions } from "./request-options";
+import { TrainLeaveService } from "./train-leave.service";
 
 export class TrainLeaveHttpService extends TrainLeaveService {
   constructor(
@@ -27,13 +27,18 @@ export class TrainLeaveHttpService extends TrainLeaveService {
         requestOptions
       )
       .pipe(
-        map(res => {
+        map((res) => {
           let convertedResult: IMonitor;
           try {
             convertedResult = JSON.parse(res.replace("journeysObj = ", ""));
           } catch {
             throw new Error("Can't convert oebb object");
           }
+
+          const journey = convertedResult.journey
+            ? convertedResult.journey
+            : [];
+
           return {
             entity: {
               fromStationName: Validator.require(
@@ -43,8 +48,8 @@ export class TrainLeaveHttpService extends TrainLeaveService {
                 this.directionCache.getStationNameById(to)
               ),
               boardType: Validator.require(convertedResult.boardType),
-              journey: convertedResult.journey ? convertedResult.journey : []
-            }
+              journey: journey.filter((j) => !!j.tr && !Number.isNaN(+j.tr)),
+            },
           };
         })
       );
