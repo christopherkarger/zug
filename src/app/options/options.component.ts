@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
-import { stations } from "../model/stations";
-import { DirectionsCacheService } from "../services/directions.cache.service";
+import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Validator } from "src/validator";
+import { stations } from "../model/stations";
+import { DirectionsCacheService } from "../services/directions.cache.service";
 
 @Component({
   templateUrl: "./options.component.html",
-  styleUrls: ["./options.component.scss"]
+  styleUrls: ["./options.component.scss"],
 })
 export class OptionsComponent implements OnInit {
   options: FormGroup;
@@ -36,31 +36,31 @@ export class OptionsComponent implements OnInit {
       awayStationA: awayStationA,
       awayStationB: awayStationB,
       homeStationA: homeStationA,
-      homeStationB: homeStationB
+      homeStationB: homeStationB,
     });
 
     awayStationA.valueChanges.subscribe({
-      next: val => {
+      next: (val) => {
         this.checkAway();
-      }
+      },
     });
 
     awayStationB.valueChanges.subscribe({
-      next: val => {
+      next: (val) => {
         this.checkAway();
-      }
+      },
     });
 
     homeStationA.valueChanges.subscribe({
-      next: val => {
+      next: (val) => {
         this.checkHome();
-      }
+      },
     });
 
     homeStationB.valueChanges.subscribe({
-      next: val => {
+      next: (val) => {
         this.checkHome();
-      }
+      },
     });
   }
 
@@ -97,7 +97,7 @@ export class OptionsComponent implements OnInit {
       awayStationA,
       awayStationB,
       homeStationA,
-      homeStationB
+      homeStationB,
     ]);
     this.router.navigate(["/"]);
   }

@@ -4,6 +4,7 @@ export interface Ijourney {
   lastStop: string; // Endstation "Wien Hbf"
   tr: string; // Bahnsteig "2"
   rt?: { dlt?: string }; // Verzögerung "dlt:11:01"
+  pr?: string;
 }
 
 export interface IMonitor {
