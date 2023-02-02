@@ -19,7 +19,12 @@
           </ng-template>
         </h2>
 
-        <p>{{ (station?.journey)[0].lastStop | cleanStationName }}</p>
+        <p>
+          <ng-container *ngIf="(station?.journey)[0].pr"
+            >{{ (station?.journey)[0].pr }} -
+          </ng-container>
+          {{ (station?.journey)[0].lastStop | cleanStationName }}
+        </p>
         <p><b>Bahnsteig:</b> {{ (station?.journey)[0].tr }}</p>
       </ng-container>
     </div>

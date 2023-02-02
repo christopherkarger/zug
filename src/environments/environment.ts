@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   api: {
-    domain: "/mocks",
-    leave: "/${0}-${1}.txt"
-  }
+    domain: "https://karger1986.freeddns.org/zug",
+    leave: "/oebb.php?evaId=${0}&dirInput=${1}",
+  },
 };
 
 /*
